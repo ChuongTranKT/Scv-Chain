@@ -50,10 +50,10 @@ export default function ViewCertificate() {
     }
   }
   const labelNames = [
-  {
-    value: 'Cerfiticate ID'
-  },
-]
+    {
+      value: 'Cerfiticate ID',
+    },
+  ]
   const updatePalletRPCs = () => {
     if (!api) {
       return
@@ -171,7 +171,6 @@ export default function ViewCertificate() {
     setInterxType(data.value)
     // clear the formState
     setFormState(initFormState)
-    
   }
 
   const getOptionalMsg = interxType =>
@@ -232,42 +231,42 @@ export default function ViewCertificate() {
                   />
                 </Form.Group>
                 </Form> */}
-                <Form>
-                    {paramFields.map((paramField, ind) => (
-                      <Form.Field key={`${paramField.name}-${paramField.type}`}>
-                        <Input
-                          placeholder={paramField.type}
-                          fluid
-                          type="text"
-                          label={labelNames[ind].value}
-                          className="input-certificate"
-                          state={{ ind, paramField }}
-                          value={inputParams[ind] ? inputParams[ind].value : ''}
-                          onChange={onPalletCallableParamChange}
+                <Form style={{ margin: '10px 0px' }}>
+                  {paramFields.map((paramField, ind) => (
+                    <Form.Field key={`${paramField.name}-${paramField.type}`}>
+                      <Input
+                        placeholder={paramField.type}
+                        fluid
+                        type="text"
+                        label={labelNames[ind].value}
+                        className="input-certificate"
+                        state={{ ind, paramField }}
+                        value={inputParams[ind] ? inputParams[ind].value : ''}
+                        onChange={onPalletCallableParamChange}
+                      />
+                      {paramField.optional ? (
+                        <Label
+                          basic
+                          pointing
+                          color="teal"
+                          content={getOptionalMsg(interxType)}
                         />
-                        {paramField.optional ? (
-                          <Label
-                            basic
-                            pointing
-                            color="teal"
-                            content={getOptionalMsg(interxType)}
-                          />
-                        ) : null}
-                      </Form.Field>
-                    ))}
+                      ) : null}
+                    </Form.Field>
+                  ))}
                 </Form>
                 <Form>
                   <Form.Field style={{ textAlign: 'center' }}>
-                      <InteractorSubmit
-                        setStatus={setStatus}
-                        attrs={{
-                          interxType,
-                          palletRpc,
-                          callable,
-                          inputParams,
-                          paramFields,
-                        }}
-                      />
+                    <InteractorSubmit
+                      setStatus={setStatus}
+                      attrs={{
+                        interxType,
+                        palletRpc,
+                        callable,
+                        inputParams,
+                        paramFields,
+                      }}
+                    />
                   </Form.Field>
                 </Form>
               </div>
@@ -306,14 +305,11 @@ export default function ViewCertificate() {
                   <label>ExpDate: </label>
                   <span className="show-content">31/12/2022</span>
                 </div> */}
-                <div className="certificate-info" >
+                <div className="certificate-info">
                   <label>Result: </label>
                   <span className="show-content">{status}</span>
-              
                 </div>
                 {/* <div style={{ overflowWrap: 'break-word' }}>{status}</div> */}
-  
-                  
               </div>
             </Segment.Group>
           </Container>

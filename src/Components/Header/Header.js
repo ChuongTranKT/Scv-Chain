@@ -3,8 +3,8 @@ import { Container, Dropdown, Icon, Menu } from 'semantic-ui-react'
 import SidebarMenu from '../Sidebar/SidebarMenu'
 import MenuItem from '../Menu/MenuItem'
 import './header.css'
-import SysMan from './../Container/ApproveOrRevokeSysMan/SysMan'
-import Organization from './../Container/ApproveOrRevokeOrganization/Organization'
+import SysMan from '../Container/ApproveSysMan/ApproveSysMan'
+import Organization from '../Container/ApproveOrganization/ApproveOrganization'
 import { SidebarAccountType } from '../Data/Data'
 
 export default class Header extends Component {

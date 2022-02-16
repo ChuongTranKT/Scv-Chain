@@ -14,7 +14,7 @@ import './sysMan.css'
 import SidebarMenu from '../../Sidebar/SidebarMenu'
 import { SidebarSysMan } from '../../Data/Data'
 
-export default class SysMan extends Component {
+export default class ApproveSysMan extends Component {
   render() {
     return (
       <Container style={{ marginTop: '20px' }}>
@@ -35,7 +35,7 @@ export default class SysMan extends Component {
             <Segment.Group>
               <Segment raised style={{ backgroundColor: 'rgb(252, 252, 252)' }}>
                 <Label color="blue" ribbon>
-                  APPROVE or REVOKE SYS-MAN
+                  APPROVE SYS-MAN
                 </Label>
               </Segment>
               <div className="approve">
@@ -50,13 +50,9 @@ export default class SysMan extends Component {
                   <TextArea placeholder="Description ..." />
                 </Form>
                 <div className="button-submit">
-                  <Button.Group>
-                    <Button>REVOKE</Button>
-                    <Button.Or />
-                    <Button positive className="button-approve">
-                      APPROVE
-                    </Button>
-                  </Button.Group>
+                  <Button positive className="button-approve">
+                    APPROVE
+                  </Button>
                 </div>
               </div>
             </Segment.Group>

@@ -13,7 +13,7 @@ import {
 import SidebarMenu from '../../Sidebar/SidebarMenu'
 import { SidebarSysMan } from '../../Data/Data'
 
-export default class Organization extends Component {
+export default class RevokeOrganization extends Component {
   render() {
     return (
       <Container style={{ marginTop: '20px' }}>
@@ -38,10 +38,10 @@ export default class Organization extends Component {
                   style={{ backgroundColor: 'rgb(252, 252, 252)' }}
                 >
                   <Label color="blue" ribbon>
-                    APPROVE or REVOKE ORG
+                    REVOKE ORG
                   </Label>
                 </Segment>
-                <div className="approve">
+                <div style={{ padding: '20px' }}>
                   <Input
                     label={{ basic: true, content: 'ID' }}
                     labelPosition="left"
@@ -53,13 +53,9 @@ export default class Organization extends Component {
                     <TextArea placeholder="Description ..." />
                   </Form>
                   <div className="button-submit">
-                    <Button.Group className="button-submit">
-                      <Button>REVOKE</Button>
-                      <Button.Or />
-                      <Button positive className="button-approve">
-                        APPROVE
-                      </Button>
-                    </Button.Group>
+                    <Button positive className="button-approve">
+                      REVOKE
+                    </Button>
                   </div>
                 </div>
               </Segment.Group>
